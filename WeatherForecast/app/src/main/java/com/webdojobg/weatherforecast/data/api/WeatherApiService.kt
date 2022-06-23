@@ -1,9 +1,7 @@
 package com.webdojobg.weatherforecast.data.api
 
-import com.webdojobg.weatherforecast.models.WeatherInfo
-import retrofit2.Call
+import com.webdojobg.weatherforecast.data.models.WeatherInfo
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface WeatherApiService {

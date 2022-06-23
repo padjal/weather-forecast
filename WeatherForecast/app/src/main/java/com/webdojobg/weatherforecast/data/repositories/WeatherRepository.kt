@@ -1,7 +1,7 @@
 package com.webdojobg.weatherforecast.data.repositories
 
 import com.webdojobg.weatherforecast.data.sources.WeatherDataSource
-import com.webdojobg.weatherforecast.models.WeatherInfo
+import com.webdojobg.weatherforecast.data.models.WeatherInfo
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -13,7 +13,7 @@ class WeatherRepository @Inject constructor(
         ){
     private val REFRESH_INTERVAL_MS : Long = 5000
 
-    val latestWeatherInfo: Flow<List<WeatherInfo>> = flow {
+    val latestWeatherInfo : Flow<List<WeatherInfo>> = flow {
         while(true){
             val latestWeatherInfo = weatherApiDataSource.fetchLatestWeather();
             emit(latestWeatherInfo)

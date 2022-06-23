@@ -1,6 +1,5 @@
-package com.webdojobg.weatherforecast.models
+package com.webdojobg.weatherforecast.data.models
 
-import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
 class WeatherInfo(
@@ -29,7 +28,9 @@ class WeatherInfo(
     data class Coord(
         @SerializedName("lon") val lon: Double,
         @SerializedName("lat") val lat: Double
-    )
+    ){
+        override fun toString() = "Lat: $lat, Lon: $lon"
+    }
 
     data class TemperatureData(
         @SerializedName("temp") val temp: Double,
