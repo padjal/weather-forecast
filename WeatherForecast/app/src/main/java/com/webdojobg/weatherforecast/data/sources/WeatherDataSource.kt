@@ -9,11 +9,16 @@ import javax.inject.Inject
 class WeatherDataSource @Inject constructor(val weatherApiService: WeatherApiService) {
     private val API_KEY = "7bc83dc4cd55081f4d8c056e0191d037"
 
-    private val locations = setOf(
+    private val locations = listOf(
+        WeatherInfo.Coord(139.0,35.0),
+        WeatherInfo.Coord(42.7, 23.2), // Sofia
+        WeatherInfo.Coord(55.6, 36.8), // Moscow
+        WeatherInfo.Coord(43.2,27.8), // Varna
+        WeatherInfo.Coord(26.8, 26.3), // Egypt
+        WeatherInfo.Coord(55.6, 36.8), // Duplicates
         WeatherInfo.Coord(139.0,35.0),
         WeatherInfo.Coord(42.7, 23.2),
         WeatherInfo.Coord(55.6, 36.8)
-
     )
 
     suspend fun fetchLatestWeather(): List<WeatherInfo> {

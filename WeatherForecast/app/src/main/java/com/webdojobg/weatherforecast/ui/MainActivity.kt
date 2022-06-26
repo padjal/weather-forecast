@@ -3,6 +3,7 @@ package com.webdojobg.weatherforecast.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.webdojobg.weatherforecast.R
 import com.webdojobg.weatherforecast.databinding.ActivityMainBinding
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         val model:MainViewModel by viewModels()
-        
+
         val weatherInfoAdapter = WeatherInfoAdapter(model.weatherLiveData.value!!)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)

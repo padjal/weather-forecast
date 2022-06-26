@@ -15,6 +15,9 @@ class MainViewModel @Inject constructor(
     private val weatherRepository: WeatherRepository
 ) : ViewModel(){
     val weatherLiveData = MutableLiveData<List<WeatherInfo>>()
+    init {
+        weatherLiveData.value = ArrayList<WeatherInfo>()
+    }
 
     init {
         viewModelScope.launch {
